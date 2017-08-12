@@ -18,7 +18,7 @@
 		<!-- Timestamp -->
 		<!-- <timestamp>${maven.build.timestamp}</timestamp> -->
         <maven.build.timestamp.format>dd-M-yyyy hh:mm:ss a z</maven.build.timestamp.format>
-        <maven.build.timezone>EST</maven.build.timezone>
+        <maven.build.timezone>America/New_York</maven.build.timezone>
 	</properties>
 	<dependencies>
 
