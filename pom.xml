@@ -112,55 +112,28 @@
 					<path>/CounterWebApp</path>
 				</configuration>
 			</plugin>
-			
-			<!-- <plugin>
-			    <groupId>org.codehaus.mojo</groupId>
-			    <artifactId>buildnumber-maven-plugin</artifactId>
-			    <version>1.0</version>
+			<plugin>
+			    <groupId>pl.project13.maven</groupId>
+			    <artifactId>git-commit-id-plugin</artifactId>
+			    <version>2.2.2</version>
+			    <!--
+			         Ensure that the revision goal is invoked during the initialize
+			         phase.
+			    -->
 			    <executions>
 			        <execution>
-			            <phase>generate-resources</phase>
 			            <goals>
-			                <goal>create</goal>
+			                <goal>revision</goal>
 			            </goals>
 			        </execution>
 			    </executions>
-			    <configuration>
-			        <doCheck>false</doCheck>
-			        <doUpdate>false</doUpdate>
-			         <revisionOnScmFailure>true</revisionOnScmFailure>
-			        <format>{0,date,yyyy-MM-dd_HH-mm}_{1}</format>
-			        <items>
-			            <item>timestamp</item>
-			            <item>${user.name}</item>
-			        </items>
+			    <configuration>					  
+			        <dotGitDirectory>${project.basedir}/../.git</dotGitDirectory>
+			        <dateFormatTimeZone>UTC</dateFormatTimeZone>
+			        <dateFormat>${maven.build.timestamp.format}</dateFormat>
 			    </configuration>
-		</plugin>
-
- -->		
- 				<plugin>
-					    <groupId>pl.project13.maven</groupId>
-					    <artifactId>git-commit-id-plugin</artifactId>
-					    <version>2.1.13</version>
-					    <!--
-					         Ensure that the revision goal is invoked during the initialize
-					         phase.
-					    -->
-					    <executions>
-					        <execution>
-					            <goals>
-					                <goal>revision</goal>
-					            </goals>
-					        </execution>
-					    </executions>
-					    <configuration>
-					        <!--
-					            Configure the location of the .git directory.
-					        -->
-					        <dotGitDirectory>${project.basedir}/../.git</dotGitDirectory>
-					    </configuration>
-					</plugin>
- </plugins>
+			</plugin>
+ 		</plugins>
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>
