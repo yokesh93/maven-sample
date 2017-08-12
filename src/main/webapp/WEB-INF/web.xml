@@ -29,4 +29,14 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+	
+	 <servlet>
+		  <servlet-name>versionPage</servlet-name>
+		  <jsp-file>/WEB-INF/versionPage.jsp</jsp-file>
+  	</servlet>
+  
+	  <servlet-mapping>
+		  <servlet-name>versionPage</servlet-name>
+		  <url-pattern>/versionPage.screen</url-pattern>
+	  </servlet-mapping>
 </web-app>
