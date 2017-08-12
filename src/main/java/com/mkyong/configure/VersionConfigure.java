@@ -14,37 +14,37 @@ import com.mkyong.domain.VersionBean;
 @PropertySource("classpath:build.properties")
 public class VersionConfigure {
 
-	@Value("${build.name}")
+	@Value("${Artifact-Id}")
 	private String appName;
 	
-	@Value("${build.groupId}")
+	@Value("${Artifact-GroupId}")
 	private String groupId;
 	
-	@Value("${build.version}")
+	@Value("${Artifact-Version}")
 	private String version;
 	
-	@Value("${build.date}")
+	@Value("${Build-Date}")
 	private String buildDate;
 	
-	@Value("${git.branch}")
+	@Value("${Branch-Name}")
 	private String gitBranch;
 	
-	@Value("${git.user}")
+	@Value("${Commited-By}")
 	private String gitUser;
 	
-	@Value("${git.user.email}")
+	@Value("${Commited-userID}")
 	private String mailId;
 	
-	@Value("${git.commit.id}")
+	@Value("${GIT-Commit-Hash}")
 	private String gitCommitId;
 	
-	@Value("${git.message}")
+	@Value("${GIT-Commit-Message}")
 	private String commitMessage;
 	
-	@Value("${git.time}")
+	@Value("${Commited-On}")
 	private String gitCommitTime;
 	
-	@Value("${git.tags}")
+	@Value("${Tag-Name}")
 	private String gitTags;
 	
 	@Bean
